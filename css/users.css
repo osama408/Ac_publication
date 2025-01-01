@@ -1,0 +1,37 @@
+.container {
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 20px auto; /* Center the form */
+    padding: 20px;
+    background-color: #10375C; /* Match your project color */
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+.text-white {
+    color: #ffffff; /* Ensure text color is white */
+}
+
+.form-control {
+    border: 1px solid #ced4da; /* Change border color */
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #80bdff; /* Focus border color */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus shadow */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Button background color */
+    border-color: #007bff; /* Button border color */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Button hover background color */
+    border-color: #0056b3; /* Button hover border color */
+}

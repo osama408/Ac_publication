@@ -1,0 +1,10 @@
+# Prevent directory listing
+Options -Indexes
+
+# Enable the rewrite engine
+RewriteEngine On
+
+# Allow access only if the session cookie exists and the user is an admin
+RewriteCond %{REQUEST_URI} ^/about_us/
+RewriteCond %{HTTP_COOKIE} !PHPSESSID [OR]
+RewriteRule ^(.*)$ /login.php [L]
