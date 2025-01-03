@@ -126,7 +126,7 @@
 
       <?php echo require 'team.php';?>
 
-    <?php require 'contact_us.php'; ?>
+    <?php //require 'contact_us.php'; ?>
 
     <?php require 'about_us.php'; ?>
 
