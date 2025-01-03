@@ -1,6 +1,8 @@
 <?php
-session_start();
-
+// Start session if not already started 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start(); 
+}
 // Get database credentials from environment variables
 $host = getenv('DB_HOST');
 $db = getenv('DB_NAME');
