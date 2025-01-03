@@ -1,19 +1,14 @@
 <?php
 session_start();
 
-
-$jawsdb_url = getenv('JAWSDB_URL');
-
-
-$dbparts = parse_url($jawsdb_url);
-
-$hostname = $dbparts['host'];
-$username = $dbparts['user'];
-$password = $dbparts['pass'];
-$database = ltrim($dbparts['path'], '/');
+// Get database credentials from environment variables
+$host = getenv('DB_HOST');
+$db = getenv('DB_NAME');
+$user = getenv('DB_USER');
+$password = getenv('DB_PASSWORD');
 
 // Create connection
-$connect = new mysqli($hostname, $username, $password, $database);
+$connect = new mysqli($host, $user, $password, $db);
 
 // Check connection
 if ($connect->connect_error) {
