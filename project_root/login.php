@@ -1,5 +1,4 @@
 <?php
-session_start();
 require '../includes/db_connect.php';
 
 // Error handling settings
