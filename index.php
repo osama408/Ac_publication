@@ -59,7 +59,7 @@
       <ul class="navbar-nav">
       <li class="nav-item"><a class="nav-link" href="project_root/dashboard.php">Admin Panel</a></li>
         <li class="nav-item"><a class="nav-link" href="#about-us">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+<!--         <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li> -->
         
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
