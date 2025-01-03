@@ -1,32 +1,36 @@
 <?php
 session_start();
 require '../includes/db_connect.php';
+
+// Error handling settings
 ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 ini_set('error_log', '/path/to/error.log');
 
-// Initialize error messages 
+// Initialize error messages
+$error_username = '';
+$error_password = '';
+$error_message = '';
 
-$error_username = ''; 
-$error_password = ''; 
-$error_message =
+function sanitize_input($input) {
+    return htmlspecialchars(stripslashes(trim($input)));
+}
 
 if (isset($_POST['login'])) {
-    $username = trim($_POST['username']);
-
+    $username = sanitize_input($_POST['username']); // Line 14
     $password = $_POST['password'];
 
-        // Validate username
-        if (empty($username)) {
-            $error_username = 'Username field can\'t be empty.';
-        } elseif (!filter_var($username, FILTER_SANITIZE_STRING)) {
-            $error_username = 'Invalid characters in username.';
-        }
+    // Validate username
+    if (empty($username)) {
+        $error_username = 'Username field can\'t be empty.';
+    } elseif (!filter_var($username, FILTER_SANITIZE_STRING)) {
+        $error_username = 'Invalid characters in username.';
+    }
 
+    // Validate password
     if (empty($password)) {
         $error_password = "Please insert your password.";
     }
-   
 
     if (empty($error_username) && empty($error_password)) {
         $stmt = mysqli_prepare($connect, "SELECT * FROM authors WHERE username = ?");
@@ -41,8 +45,8 @@ if (isset($_POST['login'])) {
             if (password_verify($password, $hashed_password)) {
                 $_SESSION['auth'] = true;
                 $_SESSION['message'] = "Login Successfully";
-                header("location: dashboard.php");
-                exit;
+                header("Location: dashboard.php");
+                exit();
             } else {
                 $error_message = 'Invalid username or password.';
             }
@@ -52,8 +56,6 @@ if (isset($_POST['login'])) {
     }
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,14 +86,14 @@ if (isset($_POST['login'])) {
         <form action="" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" name="username" autocomplete="off" required>
+                <input type="text" class="form-control" id="username" name="username" autocomplete="off" required>
                 <?php if ($error_username) { ?>
                     <small class="text-danger"><?php echo $error_username; ?></small>
                 <?php } ?>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" autocomplete="off" name="password" required>
+                <input type="password" class="form-control" id="password" name="password" autocomplete="off" required>
                 <?php if ($error_password) { ?>
                     <small class="text-danger"><?php echo $error_password; ?></small>
                 <?php } ?>
