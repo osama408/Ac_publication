@@ -1,16 +1,15 @@
 <?php
+session_start();
 require '../includes/db_connect.php';
 ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 ini_set('error_log', '/path/to/error.log');
 
+// Initialize error messages 
 
-
-
-session_start();
-$error_username = '';
-$error_password = '';
-$error_message = '';
+$error_username = ''; 
+$error_password = ''; 
+$error_message =
 
 if (isset($_POST['login'])) {
     $username = trim($_POST['username']);
