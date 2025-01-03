@@ -16,7 +16,7 @@ function sanitize_input($input) {
 }
 
 if (isset($_POST['login'])) {
-    $username = sanitize_input($_POST['username']); // Line 14
+    $username = sanitize_input($_POST['username']);
     $password = $_POST['password'];
 
     // Validate username
