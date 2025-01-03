@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
     // Validate username
     if (empty($username)) {
         $error_username = 'Username field can\'t be empty.';
-    } elseif (!filter_var($username, FILTER_SANITIZE_STRING)) {
+    } elseif (!filter_var($username, FILTER_SANITIZE_FULL_SPECIAL_CHARS)) {
         $error_username = 'Invalid characters in username.';
     }
 
