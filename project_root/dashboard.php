@@ -1,12 +1,11 @@
 <?php 
+session_start();
+require '../includes/db_connect.php'; 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require '../includes/db_connect.php'; ?>
 
-<?php
 
-session_start();
 
 if (!isset($_SESSION['auth']) || $_SESSION['auth'] !== true) {
     // Redirect to login page if not authenticated
