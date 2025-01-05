@@ -9,6 +9,7 @@ if (!isset($_SESSION['auth']) || $_SESSION['auth'] !== true) {
     exit;
 }
 
+
 if(isset($_POST['publish']))
 {
     $title = $_POST['title'];
