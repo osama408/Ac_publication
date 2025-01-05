@@ -82,7 +82,7 @@ if(isset($_POST['publish'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
      <!-- Script for fully interactive content form -->
-     <script src="https://cdn.tiny.cloud/1/py5zzcdfr80b0lq2dl91xy2wwu8pzwvoopriexzrjtrs9puk/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/md4twn817rasnyt1auvdqtldj5h3p6frdem95rg40d5menzb/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
      
 </head>
 <body>
