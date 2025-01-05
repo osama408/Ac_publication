@@ -1,19 +1,14 @@
 <?php
-require '../../includes/db_connect.php';
-
-// Hide errors
-ini_set('display_errors', 'Off');
-ini_set('error_reporting', E_ALL);
-define('WP_DEBUG', false);
-define('WP_DEBUG_DISPLAY', false);
-
 session_start();
-
+require '../../includes/db_connect.php';
 if (!isset($_SESSION['auth']) || $_SESSION['auth'] !== true) {
     // Redirect to login page if not authenticated
     header("location: ../login.php");
     exit;
 }
+
+
+
 
 if (isset($_GET['delete_id'])) {
     $delete_id = mysqli_real_escape_string($connect,$_GET['delete_id']);
