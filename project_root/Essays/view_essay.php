@@ -1,18 +1,14 @@
 <?php 
-// Hide errors
-ini_set('display_errors', 'Off');
-ini_set('error_reporting', E_ALL);
-define('WP_DEBUG', false);
-define('WP_DEBUG_DISPLAY', false);
-require '../../includes/db_connect.php';
-
 session_start();
-
+require '../../includes/db_connect.php';
 if (!isset($_SESSION['auth']) || $_SESSION['auth'] !== true) {
     // Redirect to login page if not authenticated
     header("location: ../login.php");
     exit;
 }
+
+
+
 
 // Set the number of results per page
 $per_page = 2;
