@@ -41,6 +41,7 @@ if (isset($_POST['login'])) {
             if (password_verify($password, $hashed_password)) {
                 $_SESSION['auth'] = true;
                 $_SESSION['message'] = "Login Successfully";
+                $_SESSION['username'] = $username; // Store username in session
                 header("Location: dashboard.php");
                 exit();
             } else {
