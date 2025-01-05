@@ -6,6 +6,8 @@ if (!isset($_SESSION['auth']) || $_SESSION['auth'] !== true) {
     header("location: login.php");
     exit;
 }
+// Retrieve the username from session
+$username = $_SESSION['username'];
 ?>
 
 
