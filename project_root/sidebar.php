@@ -44,7 +44,7 @@ $username = $_SESSION['username'];
     <nav id="sidebar" class="bg-dark p-3">
         <div class="sidebar-header text-white">
             <h3><i class="fas fa-user-shield"></i> </h3>
-            <p><i class="fas fa-circle text-success"></i> Super Admin <span class="online-status">Online</span></p>
+            <p><i class="fas fa-circle text-success"></i> <?php echo htmlspecialchars($username); ?> <span class="online-status">Online</span></p>
         </div>
 
         <ul class="list-unstyled components">
