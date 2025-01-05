@@ -1,11 +1,11 @@
-<?php require '../../includes/db_connect.php'; 
-
-session_start();
-
+<?php session_start();
+require '../../includes/db_connect.php'; 
 if (!isset($_SESSION['auth']) || $_SESSION['auth'] !== true) {
     // Redirect to login page if not authenticated
     header("location: ../login.php");
     exit;
+
+
 }
 ?>
 <?php
