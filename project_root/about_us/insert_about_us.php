@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
   <link rel="stylesheet" href="../../css/about_us.css">
 
   <!-- Script for a fully interactive content form -->
-  <script src="https://cdn.tiny.cloud/1/py5zzcdfr80b0lq2dl91xy2wwu8pzwvoopriexzrjtrs9puk/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+ <script src="https://cdn.tiny.cloud/1/md4twn817rasnyt1auvdqtldj5h3p6frdem95rg40d5menzb/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
   <title>About Us Form</title>
 </head>
 <body>
