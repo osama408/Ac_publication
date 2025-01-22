@@ -6,7 +6,8 @@ if (!isset($_SESSION['auth']) || $_SESSION['auth'] !== true) {
     header("location: ../login.php");
     exit;
 }
-
+ini_set('display_errors','Off');
+ini_set('error_reporting', E_ALL );
 
 ?>
 
