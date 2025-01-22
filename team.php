@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
 <style>
     .team {
   text-align: center;
@@ -19,6 +10,9 @@
 .team h2 {
   margin-bottom: 20px;
   color: #142d4c;
+  text-decoration:underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color:#142d4c;
 }
 
 .team-member {
@@ -63,8 +57,24 @@
   color: #0077b5; /* LinkedIn blue hover color */
 }
 
+.spacer{
+  height: 60px;
+  margin: 60px 0; /* Add top and bottom margins to create space between sections */
+}
+
 </style>
-<section class="team">
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="spacer"></div>
+<section id="the-team" class="team">
   <h2>Meet the Team</h2>
   
     <?php
@@ -100,6 +110,32 @@
         <?php if (!empty($linkedin)): ?>
           <a href="<?php echo $linkedin; ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
         <?php endif; ?>
+      </div>
+    </div>
+
+    <div class="team-member">
+      <img src="man.jpg" alt="Team Member">
+      <h4><b>Publisher</b> Andro Sano </h4>
+      <p><b>Major:</b>Political Researcher</p>
+      <div class="social-icons">
+          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+       
+      </div>
+    </div>
+
+
+    <div class="team-member">
+      <img src="man2.jpg" alt="Team Member">
+      <h4><b>Publisher</b> John Mani </h4>
+      <p><b>Major:</b>Political Researcher</p>
+      <div class="social-icons">
+        
+          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+       
       </div>
     </div>
 
