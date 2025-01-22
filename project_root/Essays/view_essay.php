@@ -13,7 +13,7 @@ ini_set('display_errors','Off');
 ini_set('error_reporting', E_ALL );
 
 // Set the number of results per page
-$per_page = 2;
+$per_page = 8;
 
 // Get the current page from URL, default to 1 if not set
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
