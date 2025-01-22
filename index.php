@@ -1,134 +1,191 @@
+<style>
+  .content {
+    padding: 20px;
+  }
+
+  .recent-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .recent-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33.333% - 20px);
+    margin: 10px 0;
+  }
+
+  .recent-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .recent-item h3 {
+    font-size: 1.2rem;
+    margin: 10px;
+  }
+
+  .recent-item p {
+    font-size: 0.9rem;
+    margin: 10px;
+  }
+
+  .recent-item button {
+    margin: 10px;
+    background-color: #142d4c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .recent-item button:hover {
+    background-color: white;
+    color: #142d4c;
+  }
+
+  footer {
+    background: #142d4c;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+</style>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- bootstrap  -->
-   <link rel="stylesheet" href="main_page.css">
+  <!-- bootstrap -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <!-- icons  -->
+  <!-- icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <!-- fontawesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="main_page.css">
   <title>Main Page</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #ffffff;
-      color: #333;
-    }
-    header {
-      background: #142d4c;
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    header nav a:hover {
-      text-decoration: underline;
-    }
-    
-    .logo {
-    width: 50px; /* Adjust size as needed */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .background {
+    width: 100%;
+    height: 100vh;
+    background-image: url('hero-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  header {
+    position: absolute; /* Place the header on top of the image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: transparent; /* Remove background color */
+    color: white;
+    z-index: 10;
+  }
+
+  header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+
+  header nav a:hover {
+    text-decoration: underline;
+  }
+
+  .logo {
+    width: 50px;
     height: auto;
-}
-    footer {
-      background: #142d4c;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      margin-top: 40px;
-    }
-  </style>
+  }
+
+  .spacer
+  {
+    height: 60px;
+    margin: 50px 0; /* Add top and bottom margins to create space between sections */
+  }
+
+  
+</style>
+
 </head>
 <body>
+  <div class="background">
   <header>
-  <a href="#"><img src="publishing.png" alt="Logo" class="logo"></a>
-
+    <a href="#"><img src="publishing.png" alt="Logo" class="logo"></a>
     <nav class="navbar navbar-expand-lg">
       <ul class="navbar-nav">
-<!--       <li class="nav-item"><a class="nav-link" href="project_root/login.php">Admin Panel</a></li> -->
-        <li class="nav-item"><a class="nav-link" href="#about-us">About Us</a></li>
-<!--         <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li> -->
-        
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Language
-          </a>
-          <div class="dropdown-menu" aria-labelledby="languageDropdown">
-            <a class="dropdown-item" href="#">English</a>
-            <a class="dropdown-item" href="#">Arabic</a>
-          </div>
-        </li> -->
+        <li class="nav-item"><a class="nav-link" href="project_root/dashboard.php">Admin Panel</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#the-team">The Team </a></li>
+       
       </ul>
     </nav>
   </header>
+  </div>
+
+  <div class="spacer"></div>
   <div class="content">
-    <h2>Recent Published</h2>
-    <a href="view_all_published.php" class="btn btn-primary">view all published</a>
-
-
+    <h2>Recent Publications</h2>
+    <a href="view_all_published.php" class="btn btn-primary mb-3">View All Published</a>
     <div class="recent-container">
-  <?php 
-    require 'includes/db_connect.php';
-    $display_essay = "SELECT * FROM essays LIMIT 6";
-    $confirm_display = mysqli_query($connect, $display_essay);
+      <?php 
+        require 'includes/db_connect.php';
+        $display_essay = "SELECT * FROM essays LIMIT 6";
+        $confirm_display = mysqli_query($connect, $display_essay);
 
-    function getExcerpt($content, $wordLimit = 15) {
-        $content = strip_tags($content); // Remove HTML Tags
-        $words = explode(" ", $content); // Split into words
-        $excerpt = array_slice($words, 0, $wordLimit); // Extract first n words
-        return implode(" ", $excerpt) . '...';
-    }
-
-    $counter = 0; // Initialize counter to track essay positioning
-    echo '<div class="row">'; // Open the first row
-    while ($row = mysqli_fetch_assoc($confirm_display)) {
-        $title = $row['title'];
-        $date = $row['created_at'];
-        $author = $row['author_name'];
-        $content = $row['content'];
-        $essay_id = $row['essay_id']; // Assuming there's an 'essay_id' column
-
-        // Display each essay
-        echo '<div class="recent-item">';
-        echo "<h3>Title: $title</h3>";
-        echo "<p>Date: $date</p>";
-        echo "<p>Publisher: $author</p>";
-        echo "<p>" . getExcerpt($content) . "</p>";
-        echo "<button onclick=\"location.href='read_more.php?read_more_id=$essay_id'\">Read More</button>";
-        echo '</div>';
-
-        $counter++; // Increment counter
-
-        // Start a new row every two essays
-        if ($counter % 2 == 0 && $counter != 0) {
-            echo '</div><div class="row">'; // Close and open a new row
+        function getExcerpt($content, $wordLimit = 15) {
+          $content = strip_tags($content); // Remove HTML Tags
+          $words = explode(" ", $content); // Split into words
+          $excerpt = array_slice($words, 0, $wordLimit); // Extract first n words
+          return implode(" ", $excerpt) . '...';
         }
-    }
-    echo '</div>'; // Close the final row
-  ?>
-</div>
 
+        while ($row = mysqli_fetch_assoc($confirm_display)) {
+          $title = $row['title'];
+          $date = $row['created_at'];
+          $author = $row['author_name'];
+          $content = $row['content'];
+          $essay_id = $row['essay_id'];
+          
 
+          echo '<div class="recent-item">';
+         
+          echo "<h3>$title</h3>";
+          echo "<p><strong>Date:</strong> $date</p>";
+          echo "<p><strong>Author:</strong> $author</p>";
+          echo "<p>" . getExcerpt($content) . "</p>";
+          echo "<button onclick=\"location.href='read_more.php?read_more_id=$essay_id'\">Read More</button>";
+          echo '</div>';
+        }
+      ?>
+    </div>
+  </div>
 
-
-
-      <?php echo require 'team.php';?>
-
-    <?php //require 'contact_us.php'; ?>
-
-    <?php require 'about_us.php'; ?>
+  <?php echo require 'team.php'; ?>
+  
+  <?php require 'about_us.php'; ?>
 
   <footer>
     <p>&copy; 2024 Our Platform. All rights reserved.</p>
