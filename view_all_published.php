@@ -94,7 +94,7 @@ footer {
   </div>
 </header>
 <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" href="#">My Platform</a>
+ 
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav">
       <li class="nav-item">
