@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 require '../../includes/db_connect.php';
 if (!isset($_SESSION['auth']) || $_SESSION['auth'] !== true) {
     // Redirect to login page if not authenticated
@@ -8,7 +9,8 @@ if (!isset($_SESSION['auth']) || $_SESSION['auth'] !== true) {
 }
 
 
-
+ini_set('display_errors','Off');
+ini_set('error_reporting', E_ALL );
 
 // Set the number of results per page
 $per_page = 2;
